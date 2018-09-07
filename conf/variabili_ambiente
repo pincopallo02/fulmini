@@ -1,0 +1,54 @@
+###	nomi logici
+export APPRENDISTA="10.10.0.14"
+export SERVERAPP="meteo@10.10.0.14"
+export web1_server=meteo@$APPRENDISTA:/var/www/html/prodottimeteo
+export web1_server_forecast=meteo@$APPRENDISTA:/var/www/html/prodottimeteo/forecast
+export web1_server_path=/var/www/html/prodottimeteo/forecast
+
+###	struttura cartelle processo
+                                                    #
+export home_dir=$HOME/fulmini                       # main [nome del processo]
+                                                    # |
+                                                    # |----> archivio
+export raw_dir=$home_dir/archivio/raw               # |        |----> raw
+export day_dir=$home_dir/archivio/day               # |        |----> day
+export rec_dir=$home_dir/archivio/rec               # |        |----> rec 
+export out_dir=$home_dir/archivio/out               # |        |----> out 
+                                                    # |
+export bin_dir=$home_dir/bin                        # |----> bin [scripts di tipo .sh]
+export fun_dir=$home_dir/bin/functions              # |        |-----> functions [scripts non .sh, es: Metview, R, grads, ecc.]
+                                                    # |
+export conf_dir=$home_dir/conf                      # |----> conf [file di configurazione/variabili ambiente]
+                                                    # |----> doc
+export log_dir=$home_dir/log                        # |----> log
+export tmp_dir=$home_dir/tmp                        # |----> tmp
+													#
+export HOST=meteoranew.protezionecivile.it
+export USER=lombardia
+export PASS=\$lombardia\$ftp\$
+export REMOTE_DIR=/lampi
+
+
+#--Directory operative lampi
+# BASE=/home/meteo/lampi
+# IMMAGINI=$BASE/img/
+# DATI=$BASE/dati/
+# TMP_DIR=$BASE/tmp
+# GRADS_DIR=$BASE/grads/
+# LAMPI4GRADS=/home/meteo/lampi/lampi4grads
+# STNMAP=/usr/local/bin/grads/stnmap
+# GRADS=/usr/local/bin/grads/grads
+# SERVER="meteo@10.10.49.201"
+# LAMPI_SERVER_GIORNO=/srv/www/prodottimeteo/osservazioni/.lightning_24
+# LAMPI_SERVER_REALTIME=/srv/www/prodottimeteo/osservazioni/.lightning_realtime
+# LAMPI_SERVER_DAILY=/srv/www/prodottimeteo/osservazioni/.lightning_daily
+# export GASCRP=$BASE/grads
+# #--Variabili radar
+# ftp_remotehost=meteoranew.protezionecivile.it
+# usr=lombardia
+# pwr=\$lombardia\$ftp\$
+# node="-u lombardia -p \$lombardia\$ftp\$ $ftp_remotehost"
+# remote_dir="lampi"
+
+
+

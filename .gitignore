@@ -1,0 +1,5 @@
+# ignora il contenuto delle directory dei dati e dei log
+archivio/**
+log/**
+tmp/**
+raw/**
