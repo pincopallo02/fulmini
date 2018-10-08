@@ -6,3 +6,5 @@ Requisiti python
 -> basemap (necessario per il plottaggio)
 
 -> Flask (necessario per servire le mappe)
+## NOTA
+Occorre inserire manualmente la password per il trasferimento FTP
