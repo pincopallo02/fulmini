@@ -3,7 +3,7 @@ RUN apt-get update
 RUN apt-get -y install libgl1-mesa-glx
 RUN conda install Basemap
 RUN conda install pandas
-RUN conda install minio
+RUN pip install minio
 WORKDIR /usr/src/myapp
 COPY *.py ./
 RUN mkdir templates
