@@ -19,10 +19,6 @@ Created on Tue Oct  2 10:12:46 2018
 # 6. copio su minio di ARPA
 # NOTA: too many I/O may slower the process
 # 0. Inizializzazioni
-HOST='meteoranew.protezionecivile.it'
-USER='lombardia'
-PASS=''
-REMOTE_DIR='/lampi'
 import matplotlib
 matplotlib.use('Agg')
 import os
@@ -36,6 +32,10 @@ import matplotlib.cbook
 from minio import Minio
 warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
+HOST='meteoranew.protezionecivile.it'
+USER='lombardia'
+PASS=os.getenv('FTP_PASS')
+REMOTE_DIR='/lampi'
 ftp=FTP()
 # funzione di graficazione fulmini: legge da file e plotta il contenuto del file
 def gf(nomefile):
