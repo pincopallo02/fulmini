@@ -46,7 +46,7 @@ def gf(nomefile):
     h=0
     colori=['#8B008B','#C71585','#FF4500','#FFA500','#FFD700','#FFFF00']
     ax=fig.add_subplot(111)
-    m = Basemap(projection='merc',llcrnrlat=35,urcrnrlat=47,llcrnrlon=6.5,urcrnrlon=18.5,resolution='i', epsg=4326,ax=ax)
+    m = Basemap(projection='merc',llcrnrlat=36,urcrnrlat=48.2,llcrnrlon=6,urcrnrlon=18.6,resolution='i', epsg=4326,ax=ax)
     m.drawcoastlines()
     m.drawrivers()
     m.shadedrelief(scale=0.9)
@@ -61,7 +61,7 @@ def gf(nomefile):
        m.scatter(x,y,color=c,marker="+")
        numero_fulmini.append(df.lat[(df.datetime.dt.hour>=h) & (df.datetime.dt.hour<=h+4-1) & (df.ground=='G')].count())
        h+=4
-    axin=inset_axes(m.ax,width="20%",height="20%",loc=3)
+    axin=inset_axes(m.ax,width="12%",height="12%",loc=3)
     axin.bar([4,8,12,16,20,24],numero_fulmini, width=2,color=colori,tick_label=[4,8,12,16,20,24])
     axin.tick_params(axis='y',direction='in')          
     axin.grid(b=True, axis='y')
