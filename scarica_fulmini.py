@@ -23,6 +23,8 @@ HOST='meteoranew.protezionecivile.it'
 USER='lombardia'
 PASS=''
 REMOTE_DIR='/lampi'
+import matplotlib
+matplotlib.use('Agg')
 import os
 import datetime as dt
 import pandas as pd
@@ -32,7 +34,6 @@ import matplotlib.pyplot as plt
 import warnings
 import matplotlib.cbook
 from minio import Minio
-nomefileout='C:\\Users\\mmussin\\Pictures\\'
 warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 ftp=FTP()
@@ -84,10 +85,10 @@ except:
 # 2.
 
     #lastdata=df.date.iloc[-1]
-# 3.4.5.  
+# 3.4.5. elenco file contiene l'elenco dei file su meteora: devo scaricare solo quelli che non ho già scaricato  
 for nf in elenco_file:
     comando='RETR '+ nf
-    fi=nf[16:24]
+    fi=nf[16:24] #fi contiene solo AAAAMMGG
     if ((fi == curdate.strftime('%Y%m%d')) & (not(cntl.nomefile.str.contains(nf).any()))):
         fhandle=open(curdate.strftime('%Y%m%d')+'.dat','a')
         ftp.retrbinary(comando,fhandle.write)
