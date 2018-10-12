@@ -1,6 +1,7 @@
 FROM conda/miniconda2
 RUN apt-get update
 RUN apt-get -y install libgl1-mesa-glx
+RUN apt-get -y install vim
 RUN conda install Basemap
 RUN conda install pandas
 RUN pip install minio
