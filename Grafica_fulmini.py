@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+import matplotlib
+matplotlib.use('Agg')
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 import numpy as np
@@ -8,7 +9,6 @@ import warnings
 import matplotlib.cbook
 import datetime as dt
 import os
-nomefileout='C:\\Users\\mmussin\\Pictures\\'
 warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 
@@ -40,9 +40,9 @@ def gf(nomefile):
     axin.bar([4,8,12,16,20,24],numero_fulmini, width=2,color=colori,tick_label=[4,8,12,16,20,24])
     axin.tick_params(axis='y',direction='in')          
     axin.grid(b=True, axis='y')
-    plt.savefig(nomefileout+nomefile+'.png',bbox_inches='tight')         
+    plt.savefig(nomefile+'.png',bbox_inches='tight')         
     plt.show()
-l=os.listdir('.\\data')
+l=os.listdir('./data')
 li=[x.split('.')[0] for x in l]
 for nf in li:
     gf(nf)
