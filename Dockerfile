@@ -9,6 +9,7 @@ RUN pip install Pillow
 WORKDIR /usr/src/myapp
 COPY *.py ./
 COPY *.sh ./
+COPY province.* ./
 RUN mkdir templates
 RUN touch file_controllo.txt
 COPY templates/* templates/
