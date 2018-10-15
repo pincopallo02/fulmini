@@ -8,6 +8,7 @@ RUN pip install minio
 RUN pip install Pillow
 WORKDIR /usr/src/myapp
 COPY *.py ./
+COPY *.sh ./
 RUN mkdir templates
 RUN touch file_controllo.txt
 COPY templates/* templates/
