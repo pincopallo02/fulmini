@@ -42,12 +42,12 @@ REMOTE_DIR='/lampi'
 ftp=FTP()
 # funzione di graficazione fulmini
 def gf(nomefile,df,RL,riquadro):
-"""
-nomefile= nome del file da leggere che contiene i dati (però il file non viene letto)
-df      = dataframe (viene passato direttamente in modo da non leggere da file tutte le volte)
-RL      = variabile booleana per sapere se il plottaggio riguarda la Lombardia, altrimenti plotta sull'Italia
-riquadro= lista contenente le informazioni per la selezione dell'area
-"""
+    """
+    nomefile= nome del file da leggere che contiene i dati (però il file non viene letto)
+    df      = dataframe (viene passato direttamente in modo da non leggere da file tutte le volte)
+    RL      = variabile booleana per sapere se il plottaggio riguarda la Lombardia, altrimenti plotta sull'Italia
+    riquadro= lista contenente le informazioni per la selezione dell'area
+    """
     fig = plt.figure(num=None, figsize=(22, 22) )
    # read file input con dati
     h=0
@@ -135,7 +135,7 @@ try:
 except:
     print ('something went wrong')
 try:
-    with open(nomeimgRL'rb') as file_data:
+    with open(nomeimgRL,'rb') as file_data:
         file_stat=os.stat(nomeimgRL)
         print(minioClient.put_object('lampinet',nomeimgRL,file_data,file_stat.st_size))
 except:
