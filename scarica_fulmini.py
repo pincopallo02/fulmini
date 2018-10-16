@@ -72,8 +72,8 @@ def gf(nomefile,df,RL,riquadro):
        lons_c=df.lat[(df.datetime.dt.hour>=h) & (df.datetime.dt.hour<=h+4-1) & (df.ground=='C')]
        x,y=m(lons,lats)
        m.scatter(x,y,color=c,marker="+")
-       x,y=m(lons_c,lats_c)
-       m.scatter(x,y,color=c,marker='o')
+       xc,yc=m(lons_c,lats_c)
+       m.scatter(xc,yc,color=c,marker=".")
        numero_fulmini.append(df.lat[(df.datetime.dt.hour>=h) & (df.datetime.dt.hour<=h+4-1) & (df.ground=='G')].count())
        h+=4
     axin=inset_axes(m.ax,width="12%",height="12%",loc=3)
